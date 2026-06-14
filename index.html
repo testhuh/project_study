@@ -721,15 +721,10 @@
                         <p style="font-size: 12px; color: #999;">...</p>
                         <p style="font-size: 12px; color: #999;">[01:56:40] 완료! 성공: 14 / 실패: 4</p>
                         </div>
+                        <p id="run-status" style="font-size: 12px; color: var(--secondary); font-weight: bold; min-height: 18px;"></p>
                         <div class="button-group">
-                            <button class="button" onclick="
-                                var lines = document.querySelectorAll('#exec-log p');
-                                lines.forEach(function(l){ l.style.opacity = 0; });
-                                lines.forEach(function(l, i){
-                                    setTimeout(function(){ l.style.transition = 'opacity 0.3s'; l.style.opacity = 1; }, i * 400);
-                                });
-                            ">▶ 시작하기</button>
-                            <a href="result_20260614_144629.html" class="button" target="_blank">📋 결과 보기</a>
+                            <button class="button" onclick="runDemo()">▶ 시작하기</button>
+                            <button class="button" onclick="window.open('result_20260614_144629.html', '_blank')">📋 결과 보기</button>
                         </div>
                     </div>
                 </div>
@@ -928,5 +923,27 @@
             Created with ❤️ using Python, BeautifulSoup, yt-dlp
         </p>
     </footer>
+    <script>
+        function runDemo() {
+            var status = document.getElementById('run-status');
+            var lines = document.querySelectorAll('#exec-log p');
+
+            status.textContent = '🔄 재실행 중...';
+            lines.forEach(function(l) {
+                l.style.transition = 'opacity 0.3s';
+                l.style.opacity = 0;
+            });
+
+            lines.forEach(function(l, i) {
+                setTimeout(function() {
+                    l.style.opacity = 1;
+                }, 300 + i * 400);
+            });
+
+            setTimeout(function() {
+                status.textContent = '✅ 완료! 성공: 14 / 실패: 4';
+            }, 300 + lines.length * 400);
+        }
+    </script>
 </body>
 </html>
