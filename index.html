@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melon Disney OST Playlist Crawler - 프로젝트 완성 성과</title>
+    <title>YouTube Playlist Builder & Auto Archive System - 프로젝트 완성 성과</title>
     <style>
         * {
             margin: 0;
@@ -521,6 +521,22 @@
                 gap: 15px;
                 font-size: 12px;
             }
+
+            .two-col-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .two-col-grid .process-grid,
+        .two-col-grid .output-grid {
+            grid-template-columns: 1fr 1fr;
         }
 
         /* Animation */
@@ -568,8 +584,8 @@
     <!-- Header -->
     <header id="overview">
         <div class="container">
-            <h1>🎬 Melon Disney OST Playlist Crawler</h1>
-            <p class="subtitle">YouTube Playlist Builder & Auto Archive System</p>
+            <h1>🎬 YouTube Playlist Builder & Auto Archive System</h1>
+            <p class="subtitle">Melon Disney OST Playlist Crawler</p>
             <p class="description">
                 멜론 플레이리스트에서 디즈니 OST를 수집하고, 유튜브에서 저장 가능한 버전을 찾아 
                 자동으로 정리하고 아카이빙하는 완전 자동화 시스템
@@ -578,111 +594,114 @@
     </header>
 
     <div class="container">
-        <!-- Overview Section -->
-        <section>
-            <h2>📋 프로젝트 개요</h2>
-            
-            <h3>🔄 작동 프로세스</h3>
-            <div class="process-grid">
-                <div class="process-item">
-                    <div class="number">1</div>
-                    <h4>멜론 크롤링</h4>
-                    <p>멜론 플레이리스트에서 디즈니 OST 곡 목록 자동 수집</p>
-                </div>
-
-                <div class="process-item">
-                    <div class="number">2</div>
-                    <h4>유튜브 검색</h4>
-                    <p>각 곡을 유튜브에서 검색하고 저장 가능 여부 확인</p>
-                </div>
-
-                <div class="process-item">
-                    <div class="number">3</div>
-                    <h4>플레이리스트 생성</h4>
-                    <p>검색 결과를 토대로 유튜브 플레이리스트 생성</p>
-                </div>
-
-                <div class="process-item">
-                    <div class="number">4</div>
-                    <h4>결과 분석</h4>
-                    <p>성공/실패 결과를 분석하고 리포트 생성</p>
-                </div>
-
-                <div class="process-item">
-                    <div class="number">5</div>
-                    <h4>결과 페이지</h4>
-                    <p>HTML 시각화 페이지로 결과 자동 생성</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Results Section -->
+        <!-- Overview + Results Section (merged into one page) -->
         <section id="results">
-            <h2>📊 프로젝트 성과</h2>
+            <div class="two-col-grid">
+                <div>
+                    <h2>📋 프로젝트 개요</h2>
 
-            <h3>✨ 최종 결과 통계</h3>
-            <div class="results-grid">
-                <div class="result-card">
-                    <div class="result-number">18</div>
-                    <div class="result-label">전체 곡</div>
+                    <h3>🔄 작동 프로세스</h3>
+                    <div class="process-grid">
+                        <div class="process-item">
+                            <div class="number">1</div>
+                            <h4>멜론 크롤링</h4>
+                            <p>멜론 플레이리스트에서 디즈니 OST 곡 목록 자동 수집</p>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="number">2</div>
+                            <h4>유튜브 검색</h4>
+                            <p>각 곡을 유튜브에서 검색하고 저장 가능 여부 확인</p>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="number">3</div>
+                            <h4>플레이리스트 생성</h4>
+                            <p>검색 결과를 토대로 유튜브 플레이리스트 생성</p>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="number">4</div>
+                            <h4>결과 분석</h4>
+                            <p>성공/실패 결과를 분석하고 리포트 생성</p>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="number">5</div>
+                            <h4>결과 페이지</h4>
+                            <p>HTML 시각화 페이지로 결과 자동 생성</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="result-card success">
-                    <div class="result-number success">14</div>
-                    <div class="result-label">성공 (저장 가능)</div>
-                </div>
+                <div>
+                    <h2>📊 프로젝트 성과</h2>
 
-                <div class="result-card danger">
-                    <div class="result-number danger">4</div>
-                    <div class="result-label">실패 (저장 불가)</div>
-                </div>
+                    <h3>✨ 최종 결과 통계</h3>
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <div class="result-number">18</div>
+                            <div class="result-label">전체 곡</div>
+                        </div>
 
-                <div class="result-card warning">
-                    <div class="result-number warning">78%</div>
-                    <div class="result-label">성공률</div>
-                </div>
-            </div>
+                        <div class="result-card success">
+                            <div class="result-number success">14</div>
+                            <div class="result-label">성공 (저장 가능)</div>
+                        </div>
 
-            <div class="progress-bar">
-                <div class="progress-fill" style="width: 78%;">성공률 78%</div>
-            </div>
+                        <div class="result-card danger">
+                            <div class="result-number danger">4</div>
+                            <div class="result-label">실패 (저장 불가)</div>
+                        </div>
 
-            <h3>🎯 최종 산출물</h3>
-            <div class="output-grid">
-                <div class="output-item">
-                    <div class="output-icon">📊</div>
-                    <h4>CSV 파일</h4>
-                    <p>전체 곡 데이터<br/>엑셀 형식</p>
-                </div>
+                        <div class="result-card warning">
+                            <div class="result-number warning">78%</div>
+                            <div class="result-label">성공률</div>
+                        </div>
+                    </div>
 
-                <div class="output-item">
-                    <div class="output-icon">🎵</div>
-                    <h4>WebM 음원</h4>
-                    <p>자동 다운로드<br/>14개 곡</p>
-                </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 78%;">성공률 78%</div>
+                    </div>
 
-                <div class="output-item">
-                    <div class="output-icon">🌐</div>
-                    <h4>HTML 페이지</h4>
-                    <p>웹 시각화<br/>검색/정렬 기능</p>
-                </div>
+                    <h3>🎯 최종 산출물</h3>
+                    <div class="output-grid">
+                        <div class="output-item">
+                            <div class="output-icon">📊</div>
+                            <h4>CSV 파일</h4>
+                            <p>전체 곡 데이터<br/>엑셀 형식</p>
+                        </div>
 
-                <div class="output-item">
-                    <div class="output-icon">📝</div>
-                    <h4>로그 파일</h4>
-                    <p>실행 통계<br/>오류 기록</p>
-                </div>
+                        <div class="output-item">
+                            <div class="output-icon">🎵</div>
+                            <h4>WebM 음원</h4>
+                            <p>자동 다운로드<br/>14개 곡</p>
+                        </div>
 
-                <div class="output-item">
-                    <div class="output-icon">🎬</div>
-                    <h4>영상 결과</h4>
-                    <p>프로세스 영상<br/>720p</p>
-                </div>
+                        <div class="output-item">
+                            <div class="output-icon">🌐</div>
+                            <h4>HTML 페이지</h4>
+                            <p>웹 시각화<br/>검색/정렬 기능</p>
+                        </div>
 
-                <div class="output-item">
-                    <div class="output-icon">📄</div>
-                    <h4>마크다운</h4>
-                    <p>상세 문서<br/>재현 가능</p>
+                        <div class="output-item">
+                            <div class="output-icon">📝</div>
+                            <h4>로그 파일</h4>
+                            <p>실행 통계<br/>오류 기록</p>
+                        </div>
+
+                        <div class="output-item">
+                            <div class="output-icon">🎬</div>
+                            <h4>영상 결과</h4>
+                            <p>프로세스 영상<br/>720p</p>
+                        </div>
+
+                        <div class="output-item">
+                            <div class="output-icon">📄</div>
+                            <h4>마크다운</h4>
+                            <p>상세 문서<br/>재현 가능</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
