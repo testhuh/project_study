@@ -743,14 +743,14 @@
                             <li>✓ Lofi Pixar Disney Lofi Steal The Show Lofi Ver</li>
                             <li>... 외 10곡</li>
                         </ul>
-                        <p style="font-size: 12px; margin-top: 15px; color: var(--danger);"><strong>⚠ 수중 추가 필요 (4곡)</strong></p>
+                        <p style="font-size: 12px; margin-top: 15px; color: var(--danger);"><strong>⚠ 수동 추가 필요 (4곡)</strong></p>
                         <ul style="font-size: 12px; color: #666; margin-left: 20px;">
                             <li>⚠ A Whole New World (Peabo Bryson)</li>
                             <li>⚠ Under The Sea (Samuel E. Wright)</li>
                         </ul>
                         <div class="button-group">
-                            <button class="button">📋 결과 보기 (HTML)</button>
-                            <button class="button">📥 결과 영상 재생</button>
+                            <a href="result_20260614_144629.html" class="button" target="_blank">📋 결과 보기 (HTML)</a>
+                            <a href="#result-video" class="button" onclick="document.getElementById('result-video').scrollIntoView({behavior:'smooth'}); document.getElementById('result-video').play();">📥 결과 영상 재생</a>
                         </div>
                     </div>
                 </div>
@@ -774,7 +774,7 @@
                             <p style="font-size: 11px; color: #666; margin: 5px 0;"><strong>생성 시간:</strong> 2026-06-14 01:56:41</p>
                         </div>
                         <div class="button-group">
-                            <button class="button">▶ 영상 재생</button>
+                            <a href="#result-video" class="button" onclick="document.getElementById('result-video').scrollIntoView({behavior:'smooth'}); document.getElementById('result-video').play();">▶ 영상 재생</a>
                         </div>
                     </div>
                 </div>
@@ -786,7 +786,7 @@
                 전체 자동화 프로세스의 실행 과정을 확인할 수 있는 영상입니다.
             </p>
             <div class="video-container">
-                <video controls poster="https://via.placeholder.com/1280x720?text=Disney+OST+Playlist+Crawler">
+                <video id="result-video" controls poster="https://via.placeholder.com/1280x720?text=Disney+OST+Playlist+Crawler">
                     <source src="https://github.com/testhuh/project/raw/main/disney_playlist_demo_web_720p.mp4" type="video/mp4">
                     브라우저가 영상 재생을 지원하지 않습니다.
                 </video>
